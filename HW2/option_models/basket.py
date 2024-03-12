@@ -39,13 +39,11 @@ def basket_price_mc_cv(
     '''
     price2 = 0
 
-    ''' 
     compute price3: analytic price based on normal model
     
     price3 = basket_price_norm_analytic(
         strike, spot, vol, weights, texp, cor_m, intr, divr, cp)
-    '''
-    price3 = 0
+    price3 = 10
     
     # return two prices: without and with CV
     return np.array([price1, price1 + (price3 - price2)])
